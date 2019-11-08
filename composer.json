@@ -1,0 +1,23 @@
+{
+  "name": "cjpgdk/wordbook-api-client",
+  "description": "Client for working with wordbook.cjpg.app's API",
+  "keywords": ["wordbook","dictionary","api"],
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Christian M. Jensen",
+      "email": "cmj@cjpg.dk"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Cjpgdk\\Wordbook\\Api\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.0.0",
+    "guzzlehttp/guzzle": ">=6.0.0",
+    "ext-json": "*"
+  }
+}
