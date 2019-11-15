@@ -103,6 +103,24 @@ class BaseCollection implements ArrayAccess, JsonSerializable, Countable, Iterat
     }
 
     /**
+     * Filter the current list of items.
+     *
+     * <code><pre>
+     * $obj_new = $obj->filter(function($value, $key) {
+     *     return true;
+     * }
+     * </pre></code>
+     *
+     * @param callable $callback The callback function to use
+     * @return static
+     * @link https://php.net/manual/en/function.array-filter.php
+     */
+    public function filter($callback)
+    {
+        return new static(array_filter($this->elements(), $callback, ARRAY_FILTER_USE_BOTH));
+    }
+
+    /**
      * Pop an element off the end of collection
      * @return mixed  the last value of the collection, or null if the collection is empty
      * @see array_pop()
