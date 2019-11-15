@@ -31,7 +31,11 @@ class BaseCollection implements ArrayAccess, JsonSerializable, Countable, Iterat
      */
     public function __construct($elements = [])
     {
-        $this->elements = (array)$elements;
+        if ($elements instanceof static) {
+            $this->elements = $elements->elements();
+        } else {
+            $this->elements = (array)$elements;
+        }
     }
 
     /**
