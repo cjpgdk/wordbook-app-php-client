@@ -1,0 +1,1 @@
+composer run-script --timeout=0 build-client

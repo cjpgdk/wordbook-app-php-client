@@ -1,0 +1,19 @@
+{
+  "banner": [
+    "This file is part of the wordbook-php-client project.",
+    "",
+    "(c) 2019 Christian M. Jensen <cmj@cjpg.dk>",
+    "",
+    "This source file is subject to the MIT license that is bundled",
+    "with this source code in the file LICENSE."
+  ],
+  "files": ["wordbook-lookup"],
+  "output": "bin/wordbook-lookup.phar",
+  "main": "wordbook-lookup",
+  "compression": "GZ",
+  "compactors": [
+    "KevinGH\\Box\\Compactor\\Php",
+    "KevinGH\\Box\\Compactor\\Json"
+  ],
+  "datetime": "release-date"
+}

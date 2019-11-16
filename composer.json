@@ -1,7 +1,7 @@
 {
   "name": "cjpgdk/wordbook-api-client",
-  "description": "Client for working with wordbook.cjpg.app's API",
-  "keywords": ["wordbook","dictionary","api"],
+  "description": "Client and library for working with wordbook.cjpg.app's API",
+  "keywords": ["wordbook","dictionary","api","client"],
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
@@ -12,12 +12,23 @@
   ],
   "autoload": {
     "psr-4": {
-      "Cjpgdk\\Wordbook\\Api\\": "src/"
+      "Cjpgdk\\Wordbook\\Api\\": "src/",
+      "Cjpgdk\\Wordbook\\Client\\": "client/"
     }
+  },
+  "bin": ["bin/wordbook-lookup.phar"],
+  "scripts": {
+    "build-client": [
+      "rm -f bin/wordbook-lookup.phar",
+      "box compile"
+    ]
   },
   "require": {
     "php": ">=7.0.0",
-    "guzzlehttp/guzzle": ">=6.0.0",
-    "ext-json": "*"
+    "ext-json": "*",
+    "guzzlehttp/guzzle": ">=6.0.0"
+  },
+  "suggest": {
+    "symfony/console": "If you plan on using the client files under './client', not need for the library files!"
   }
 }
